@@ -11530,6 +11530,567 @@ export function Frame194() {
     </div>
   );
 }
+// ---- Mission debrief screens (Figma Section 1, frames 199–209) ----
+
+const TITLE_BASE =
+  "-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col justify-center items-center text-center leading-[0] left-1/2 text-[32px] tracking-[-0.48px] whitespace-nowrap";
+
+function DebriefBackground({
+  className,
+  overlay = "bg-[rgba(0,0,0,0.3)]",
+}: {
+  className: string;
+  overlay?: string;
+}) {
+  return (
+    <div
+      className={`-translate-x-1/2 -translate-y-1/2 absolute ${className}`}
+      data-name="Background"
+    >
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img
+          alt=""
+          className="absolute max-w-none object-cover size-full"
+          src={`${assetPathPrefix}/0ea1b.png`}
+        />
+        <div className={`absolute ${overlay} inset-0`} />
+      </div>
+    </div>
+  );
+}
+
+function DebriefNav({ next = true }: { next?: boolean }) {
+  return (
+    <>
+      <a
+        className="absolute block cursor-pointer left-[42px] size-[44px] top-[34px]"
+        data-name="Backward_BTN 1"
+      >
+        <img
+          alt=""
+          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+          src={uiNavArrow}
+        />
+      </a>
+      <div className="absolute left-[759px] size-[44px] top-[34px]" data-name="Menu_BTN 1">
+        <img
+          alt=""
+          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+          src={uiMenu}
+        />
+      </div>
+      {next && (
+        <div className="absolute flex items-center justify-center left-[759px] size-[44px] top-[334px]">
+          <div className="-scale-x-100 flex-none">
+            <a className="block cursor-pointer relative size-[44px]" data-name="Backward_BTN 2">
+              <img
+                alt=""
+                className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+                src={uiNavArrow}
+              />
+            </a>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+function HoustonPanel({ className }: { className: string }) {
+  return (
+    <div className={`-translate-x-1/2 absolute ${className}`} data-name="Boss_Name_Table 2">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            alt=""
+            className="absolute h-[305.81%] left-0 max-w-none top-[-96.02%] w-full"
+            src={`${assetPathPrefix}/b6be3.png`}
+          />
+        </div>
+        <div className="absolute bg-[rgba(0,0,0,0.15)] inset-0" />
+      </div>
+    </div>
+  );
+}
+
+function SdoImage() {
+  return (
+    <div className="absolute h-[236px] left-[484px] top-[84px] w-[275px]" data-name="NASA-SDO 1">
+      <img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+        src={`${assetPathPrefix}/d6e8f.png`}
+      />
+    </div>
+  );
+}
+
+function SdoCaption() {
+  return (
+    <>
+      <div className="absolute bg-[#08f] h-[40px] left-[484px] top-[320px] w-[231px]" />
+      <p className="[word-break:break-word] absolute font-['Orelega_One:Regular'] leading-[1.57] left-[567px] not-italic text-[15px] text-white top-[328px] tracking-[-0.225px] whitespace-nowrap">{`Image: NASA/ SDO `}</p>
+    </>
+  );
+}
+
+function Year1972Title() {
+  return (
+    <div className={`${TITLE_BASE} font-['Orbitron:Regular'] font-normal text-white top-[75px]`}>
+      <p className="leading-[1.2] mb-0">What actually happened in 1972?</p>
+      <p className="leading-[1.2]">​</p>
+    </div>
+  );
+}
+
+function PinkCard({ className, children }: { className: string; children: React.ReactNode }) {
+  return (
+    <div className={`absolute h-[285px] w-[367px] ${className}`}>
+      <div className="absolute bg-[#fb227b] h-[285px] left-0 top-0 w-[367px]" />
+      {children}
+    </div>
+  );
+}
+
+export function Frame199() {
+  return (
+    <div className="relative size-full" data-node-id="21:2410">
+      <DebriefBackground className="h-[534px] left-[calc(50%+5px)] top-[calc(50%+41px)] w-[834px]" />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-white top-[56px]`}
+        data-node-id="21:2415"
+      >
+        <p className="leading-[1.2]">The 1972 Solar Particle Event</p>
+      </div>
+      <div
+        className="-translate-x-1/2 absolute bg-[#fb227b] content-stretch flex h-[225px] items-center justify-center left-[calc(50%+2.5px)] pt-[10.313px] px-[12.891px] rounded-[5.156px] top-[109px] w-[765px]"
+        data-node-id="21:2417"
+      >
+        <div className="[word-break:break-word] font-['Orbitron:Bold'] font-bold leading-[0] relative shrink-0 text-[16px] text-center text-white tracking-[-0.24px] w-[774px] whitespace-pre-wrap">
+          <p className="leading-[2] mb-0">{`NASA sets an astronaut's lifetime radiation limit at 600 mSv. `}</p>
+          <p className="leading-[2] mb-0">​</p>
+          <p className="leading-[2] mb-0">{`But the event that you just survived is inspired from the 1972 Solar Particle Event, where radiation doses could have reached 1,000 to 4,000 millisieverts — enough to cause sever illness or even  death.`}</p>
+          <p className="leading-[2]">​</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Frame200() {
+  return (
+    <div className="relative size-full" data-node-id="21:2419">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <Year1972Title />
+      <PinkCard className="left-[104px] top-[94px]">
+        <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold leading-[0] left-[calc(50%-164.5px)] text-[15px] text-white top-[calc(50%-107.5px)] tracking-[-0.225px] w-[329px] whitespace-pre-wrap">
+          <p className="leading-[1.57] mb-0">Historical date: 4 August 1972.</p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57] mb-0">{`NASA's historical radiation review identifies the August 1972 event as an exceptionally significant event that could have changed lunar exploration forever`}</p>
+        </div>
+      </PinkCard>
+      <SdoCaption />
+      <SdoImage />
+    </div>
+  );
+}
+
+export function Frame201() {
+  return (
+    <div className="relative size-full" data-node-id="21:2433">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <Year1972Title />
+      <PinkCard className="left-[99px] top-[104px]">
+        <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold h-[248px] leading-[0] left-[calc(50%-164.5px)] text-[15px] text-white top-[calc(50%-123.5px)] tracking-[-0.225px] w-[329px] whitespace-pre-wrap">
+          <p className="leading-[1.57] mb-0">{` On 2 Aug 1972, the Sun shot out billions of tons of high-speed, charged particles towards Earth.`}</p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57] mb-0">
+            Two days later, another particle event, called a CME, reached the Earth in 14.6 hour.
+          </p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57]">
+            Typical CMEs take around 2-3 days to reach Earth. This one was a bullet
+          </p>
+        </div>
+      </PinkCard>
+      <SdoCaption />
+      <SdoImage />
+    </div>
+  );
+}
+
+export function Frame202() {
+  return (
+    <div className="relative size-full" data-node-id="21:2447">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <Year1972Title />
+      <PinkCard className="left-[99px] top-[104px]">
+        <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold h-[228px] leading-[0] left-[calc(50%-174.5px)] text-[15px] text-white top-[calc(50%-113.5px)] tracking-[-0.225px] w-[350px] whitespace-pre-wrap">
+          <p className="leading-[1.57] mb-0">{`This occured just between Apollo 16 & 17. `}</p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57] mb-0">
+            If any Astronauts had been in space at that time, they would be getting an estimated 600
+            rem of radiation to their skin.
+          </p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57]">
+            This would be enough to cause severe radiation sickness or even death!
+          </p>
+        </div>
+      </PinkCard>
+      <div className="absolute bg-[#08f] h-[40px] left-[350px] top-[349px] w-[231px]" />
+      <p className="[word-break:break-word] absolute font-['Orelega_One:Regular'] leading-[1.57] left-[371px] not-italic text-[15px] text-white top-[357px] tracking-[-0.225px] whitespace-nowrap">{`NASA Radiation Environment `}</p>
+      <SdoImage />
+    </div>
+  );
+}
+
+export function Frame203() {
+  return (
+    <div className="relative size-full" data-node-id="21:2465">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <Year1972Title />
+      <PinkCard className="left-[104px] top-[95px]">
+        <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold h-[151px] leading-[0] left-[calc(50%-164.5px)] text-[15px] text-white top-[calc(50%-75.5px)] tracking-[-0.225px] w-[329px] whitespace-pre-wrap">
+          <p className="leading-[1.57] mb-0">
+            The 1972 Space Storms are now a case study for space weather protection.
+          </p>
+          <p className="leading-[1.57] mb-0">​</p>
+          <p className="leading-[1.57] mb-0">{`Modern spacecrafts are built with `}</p>
+          <p className="leading-[1.57]">{`radiation shelters and real-time solar monitoring systems. `}</p>
+        </div>
+      </PinkCard>
+      <SdoCaption />
+      <SdoImage />
+    </div>
+  );
+}
+
+export function Frame204() {
+  return (
+    <div className="relative size-full" data-node-id="21:2479">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-white top-[56px]`}
+        data-node-id="21:2483"
+      >
+        <p className="leading-[1.2]">{`Mission Control- Houstonh `}</p>
+      </div>
+      <HoustonPanel className="h-[169px] left-[calc(50%+25.5px)] top-[121px] w-[535px]" />
+      <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold leading-[0] left-[261px] text-[15px] text-white top-[138px] tracking-[-0.225px] w-[392px] whitespace-pre-wrap">
+        <p className="leading-[1.57] mb-0">{`The real mission between Apollo 16 and 17 didn't have a lunar crew present during this event. `}</p>
+        <p className="leading-[1.57] mb-0">​</p>
+        <p className="leading-[1.57]">But future astronauts may one day face similar challenges.</p>
+      </div>
+      <div className="absolute left-[42px] size-[287px] top-[103px]" data-name="image 17">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img
+            alt=""
+            className="absolute h-[101.64%] left-[-5.71%] max-w-none top-[-1.65%] w-full"
+            src={`${assetPathPrefix}/ada9f.png`}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HoustonWave() {
+  return (
+    <div className="absolute flex items-center justify-center left-[12px] size-[296px] top-[99px]">
+      <div className="-scale-y-100 flex-none rotate-180">
+        <div className="relative size-[296px]" data-name="image 17">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img
+              alt=""
+              className="absolute left-[1.97%] max-w-none size-full top-[-0.56%]"
+              src={`${assetPathPrefix}/2eb14.png`}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Frame205() {
+  return (
+    <div className="relative size-full" data-node-id="21:2488">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-white top-[56px]`}
+        data-node-id="21:2492"
+      >
+        <p className="leading-[1.2]">{`Mission Control- Houston `}</p>
+      </div>
+      <HoustonPanel className="h-[207px] left-[calc(50%+33px)] top-[113px] w-[520px]" />
+      <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold leading-[0] left-[274px] text-[15px] text-white top-[150px] tracking-[-0.225px] w-[392px] whitespace-pre-wrap">
+        <p className="leading-[1.57] mb-0">
+          Commander, Outpost Zero has successfully completed its first mission.
+        </p>
+        <p className="leading-[1.57]">{`"Your crew faced unexpected challenges, but you kept them safe, adapted to changing conditions, and continued exploring`}</p>
+      </div>
+      <HoustonWave />
+    </div>
+  );
+}
+
+export function Frame206() {
+  return (
+    <div className="relative size-full" data-node-id="21:2497">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav next={false} />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-white top-[56px]`}
+        data-node-id="21:2501"
+      >
+        <p className="leading-[1.2]">{`Mission Control- Houston `}</p>
+      </div>
+      <HoustonPanel className="h-[167px] left-[calc(50%+33px)] top-[122px] w-[520px]" />
+      <div className="[word-break:break-word] absolute font-['Orbitron:Bold'] font-bold leading-[0] left-[274px] text-[15px] text-white top-[150px] tracking-[-0.225px] w-[392px] whitespace-pre-wrap">
+        <p className="leading-[1.57] mb-0">{`Humanity has taken another step toward living beyond Earth. `}</p>
+        <p className="leading-[1.57] mb-0">​</p>
+        <p className="leading-[1.57]">Mission complete, Commander.</p>
+      </div>
+      <HoustonWave />
+    </div>
+  );
+}
+
+export function Frame207() {
+  return (
+    <div className="relative size-full" data-node-id="21:2505">
+      <DebriefBackground className="h-[582px] left-[calc(50%-16.5px)] top-[calc(50%+41px)] w-[909.375px]" />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-white top-[56px]`}
+        data-node-id="21:2509"
+      >
+        <p className="leading-[1.2]">{`Mission Post Mortem `}</p>
+      </div>
+      <div className="-translate-x-1/2 absolute bg-[#fb227b] content-stretch flex items-center justify-center left-[calc(50%-10.76px)] px-[12.891px] py-[10.313px] rounded-[5.156px] top-[158px] w-[172.486px]">
+        <div className="[word-break:break-word] flex flex-col font-['Orbitron:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[21.734px] text-white whitespace-nowrap">
+          <p className="leading-[normal]">SURVIVED</p>
+        </div>
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[normal] left-[calc(50%-15.83px)] text-[25.324px] text-center text-white top-[113px] tracking-[-0.5065px] w-[110.341px]">
+        Status
+      </p>
+      <div className="-translate-x-1/2 absolute h-[165.756px] left-[calc(50%-15.55px)] top-[247px] w-[404.906px]">
+        <div
+          className="-translate-x-1/2 absolute h-[147.883px] left-[calc(50%+0.17px)] top-[-20px] w-[361.247px]"
+          data-name="Table_02 1"
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img
+              alt=""
+              className="absolute h-[162.85%] left-0 max-w-none top-[-28.94%] w-full"
+              src={`${assetPathPrefix}/32cde.png`}
+            />
+          </div>
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[normal] left-[203.36px] text-[13.903px] text-center text-white top-[17px] tracking-[0.0695px] w-[272.855px]">
+          Crew Health: Medium
+        </p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[normal] left-[203.35px] text-[13.903px] text-center text-white top-[45.77px] tracking-[0.0695px] w-[231.145px]">
+          Science Objectives: 82%
+        </p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[normal] left-[203.36px] text-[13.903px] text-center text-white top-[74.54px] tracking-[0.0695px] w-[272.855px]">
+          Power Reserves: 31%
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ReportLine({ top }: { top: string }) {
+  return (
+    <div
+      className={`absolute flex h-[1.016px] items-center justify-center left-[13px] w-[622px] ${top}`}
+    >
+      <div className="flex-none rotate-[-0.09deg]">
+        <div className="h-0 relative w-[622.001px]">
+          <div className="absolute inset-[-1px_0_0_0]">
+            <img
+              alt=""
+              className="block max-w-none size-full"
+              src={`${assetPathPrefix}/00b3b.svg`}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ReportText({ className, children }: { className: string; children: React.ReactNode }) {
+  return (
+    <div
+      className={`-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Orbitron:Bold'] font-bold justify-center leading-[0] text-[17.304px] text-white tracking-[-0.2596px] ${className}`}
+    >
+      <p className="leading-[1.2]">{children}</p>
+    </div>
+  );
+}
+
+export function Frame208() {
+  return (
+    <div className="relative size-full" data-node-id="21:2520">
+      <DebriefBackground
+        className="h-[403px] left-1/2 top-[calc(50%-0.5px)] w-[844px]"
+        overlay="bg-[rgba(0,0,0,0.5)]"
+      />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Regular'] font-normal text-white top-[56px]`}
+        data-node-id="21:2525"
+      >
+        <p className="leading-[1.2]">Your Complete Mission Report</p>
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[281px] left-1/2 top-[calc(50%+25.5px)] w-[648px]">
+        <div
+          className="-translate-x-1/2 -translate-y-1/2 absolute h-[281px] left-[calc(50%-0.5px)] top-[calc(50%+1px)] w-[649px]"
+          data-name="Cloud_02 1"
+        >
+          <div aria-hidden className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                alt=""
+                className="absolute h-[117.26%] left-0 max-w-none top-[0.02%] w-[100.05%]"
+                src={`${assetPathPrefix}/62426.png`}
+              />
+            </div>
+            <div className="absolute bg-[rgba(0,0,0,0.06)] inset-0" />
+          </div>
+        </div>
+        <ReportLine top="top-[59px]" />
+        <ReportLine top="top-[131px]" />
+        <ReportLine top="top-[203px]" />
+        <div className="-translate-x-1/2 absolute flex h-[257px] items-center justify-center left-1/2 top-[10px] w-[2.008px]">
+          <div className="flex-none rotate-[89.55deg]">
+            <div className="h-0 relative w-[257.008px]">
+              <div className="absolute inset-[-1px_0_0_0]">
+                <img
+                  alt=""
+                  className="block max-w-none size-full"
+                  src={`${assetPathPrefix}/f7597.svg`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <ReportText className="left-[110px] top-[29.5px] whitespace-nowrap">{`Evaluation `}</ReportText>
+        <ReportText className="left-[350px] top-[31.5px] whitespace-nowrap">Your Report</ReportText>
+        <ReportText className="left-[350px] top-[101.5px] whitespace-nowrap">
+          You kept your crew safe
+        </ReportText>
+        <ReportText className="left-[350px] top-[168px] w-[231px]">
+          You managed your resources properly
+        </ReportText>
+        <ReportText className="left-[100px] top-[101.5px] whitespace-nowrap">
+          Crew Safety
+        </ReportText>
+        <ReportText className="left-[100px] top-[167.5px] whitespace-nowrap">
+          Resource Efficiency
+        </ReportText>
+        <ReportText className="left-[100px] top-[231.5px] whitespace-nowrap">
+          Scientific Progress
+        </ReportText>
+        <ReportText className="left-[350px] top-[236px] w-[239px]">
+          Your team grew plants on the Moon
+        </ReportText>
+      </div>
+    </div>
+  );
+}
+
+function StatusRow({ label, dot, gap }: { label: string; dot: string; gap?: boolean }) {
+  return (
+    <div
+      className={`content-stretch flex items-center relative shrink-0 w-full ${gap ? "gap-[45px]" : "justify-between"}`}
+    >
+      <p className="[word-break:break-word] font-['Orbitron:SemiBold'] font-semibold leading-[1.75] relative shrink-0 text-[18px] text-white tracking-[-0.27px] whitespace-nowrap">
+        {label}
+      </p>
+      <div className="relative shrink-0 size-[16px]">
+        <img
+          alt=""
+          className="absolute block inset-0 max-w-none size-full"
+          src={`${assetPathPrefix}/${dot}`}
+        />
+      </div>
+    </div>
+  );
+}
+
+export function Frame209() {
+  return (
+    <div className="relative size-full" data-node-id="21:2540">
+      <DebriefBackground
+        className="h-[564px] left-1/2 top-[calc(50%+82px)] w-[882px]"
+        overlay="bg-[rgba(0,0,0,0.5)]"
+      />
+      <DebriefNav />
+      <div
+        className={`${TITLE_BASE} font-['Orbitron:Bold'] font-bold text-[#ff383c] top-[56px]`}
+        data-node-id="21:2545"
+      >
+        <p className="leading-[1.2]">Mission Complete!</p>
+      </div>
+      <div className="absolute bg-[rgba(93,93,93,0.09)] border border-[#fff9f9] border-solid h-[281px] left-[42px] overflow-clip top-[96px] w-[294px]">
+        <p className="[word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[1.75] left-[31px] text-[26px] text-white top-0 tracking-[-0.39px] w-[324px]">
+          Outpost Zero:
+        </p>
+        <p className="[word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[0] left-[31px] text-[20px] text-white top-[53px] tracking-[-0.3px] whitespace-nowrap">
+          <span className="leading-[1.75]">Day: 30</span>
+          <span className="leading-[1.75] text-[#fb227b]">/30</span>
+        </p>
+        <p className="[word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[1.75] left-[31px] text-[20px] text-white top-[95px] tracking-[-0.3px] whitespace-nowrap">
+          Resource panel:
+        </p>
+        <div className="[word-break:break-word] absolute font-['Orbitron:SemiBold'] font-semibold leading-[0] left-[31px] text-[18px] text-white top-[140px] tracking-[-0.27px] whitespace-nowrap">
+          <p className="mb-0 whitespace-pre">
+            <span className="leading-[1.75]">{`Life Support  20`}</span>
+            <span className="leading-[1.75] text-[#fb227b]">/100</span>
+          </p>
+          <p className="mb-0 whitespace-pre">
+            <span className="leading-[1.75]">{`Power  20`}</span>
+            <span className="leading-[1.75] text-[#fb227b]">/100</span>
+          </p>
+          <p className="whitespace-pre">
+            <span className="leading-[1.75]">{`Protection  60`}</span>
+            <span className="leading-[1.75] text-[#fb227b]">/100</span>
+          </p>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[38px] items-start left-[385px] top-[113px] w-[242px]">
+        <StatusRow label="Crew status." dot="f57d8.svg" />
+        <StatusRow label="Current Alerts" dot="2a867.svg" />
+        <StatusRow label="Mission Objectives" dot="82b38.svg" gap />
+      </div>
+      <div className="absolute flex h-[188.384px] items-center justify-center left-[653.48px] top-[112.67px] w-[122.592px]">
+        <div className="flex-none rotate-[-0.18deg]">
+          <div className="content-stretch flex flex-col gap-[30px] items-start relative font-['Orbitron:SemiBold'] font-semibold text-[18px] text-white tracking-[-0.27px] whitespace-nowrap">
+            <p className="leading-[1.75]">Protected</p>
+            <p className="leading-[1.75]">None</p>
+            <div className="leading-[0]">
+              <p className="leading-[1.75] mb-0">Survive</p>
+              <p className="leading-[1.75]">For 30 days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export const FRAME_META: Record<
   string,
   {
@@ -12261,10 +12822,99 @@ export const FRAME_META: Record<
     height: 412,
     Component: Frame194,
   },
+  Frame199: {
+    nodeId: "21:2410",
+    name: "Frame 199",
+    key: "Frame199",
+    width: 844,
+    height: 412,
+    Component: Frame199,
+  },
+  Frame200: {
+    nodeId: "21:2419",
+    name: "Frame 200",
+    key: "Frame200",
+    width: 844,
+    height: 412,
+    Component: Frame200,
+  },
+  Frame201: {
+    nodeId: "21:2433",
+    name: "Frame 201",
+    key: "Frame201",
+    width: 844,
+    height: 412,
+    Component: Frame201,
+  },
+  Frame202: {
+    nodeId: "21:2447",
+    name: "Frame 202",
+    key: "Frame202",
+    width: 844,
+    height: 412,
+    Component: Frame202,
+  },
+  Frame203: {
+    nodeId: "21:2465",
+    name: "Frame 203",
+    key: "Frame203",
+    width: 844,
+    height: 412,
+    Component: Frame203,
+  },
+  Frame204: {
+    nodeId: "21:2479",
+    name: "Frame 204",
+    key: "Frame204",
+    width: 844,
+    height: 412,
+    Component: Frame204,
+  },
+  Frame205: {
+    nodeId: "21:2488",
+    name: "Frame 205",
+    key: "Frame205",
+    width: 844,
+    height: 412,
+    Component: Frame205,
+  },
+  Frame206: {
+    nodeId: "21:2497",
+    name: "Frame 206",
+    key: "Frame206",
+    width: 844,
+    height: 412,
+    Component: Frame206,
+  },
+  Frame207: {
+    nodeId: "21:2505",
+    name: "Frame 207",
+    key: "Frame207",
+    width: 844,
+    height: 412,
+    Component: Frame207,
+  },
+  Frame208: {
+    nodeId: "21:2520",
+    name: "Frame 208",
+    key: "Frame208",
+    width: 844,
+    height: 412,
+    Component: Frame208,
+  },
+  Frame209: {
+    nodeId: "21:2540",
+    name: "Frame 209",
+    key: "Frame209",
+    width: 844,
+    height: 412,
+    Component: Frame209,
+  },
 };
 
 // Every local asset used by the frames, preloaded in the background for smooth navigation.
 export const ALL_ASSET_URLS: string[] = [
+  `${assetPathPrefix}/00b3b.svg`,
   `${assetPathPrefix}/0ea1b.png`,
   `${assetPathPrefix}/11a87.svg`,
   `${assetPathPrefix}/17ca7.png`,
@@ -12272,6 +12922,7 @@ export const ALL_ASSET_URLS: string[] = [
   `${assetPathPrefix}/21a84.png`,
   `${assetPathPrefix}/2a867.svg`,
   `${assetPathPrefix}/2eb14.png`,
+  `${assetPathPrefix}/32cde.png`,
   `${assetPathPrefix}/4001b.png`,
   `${assetPathPrefix}/496b3.png`,
   `${assetPathPrefix}/4cd23.png`,
@@ -12300,6 +12951,7 @@ export const ALL_ASSET_URLS: string[] = [
   `${assetPathPrefix}/eb544.svg`,
   `${assetPathPrefix}/f1f93.png`,
   `${assetPathPrefix}/f57d8.svg`,
+  `${assetPathPrefix}/f7597.svg`,
   `${assetPathPrefix}/ui/menu.png`,
   `${assetPathPrefix}/ui/nav-arrow.png`,
 ];
@@ -12912,6 +13564,78 @@ export const FRAME_ASSETS: Record<string, string[]> = {
     `${assetPathPrefix}/7ed7a.png`,
     `${assetPathPrefix}/b6be3.png`,
     `${assetPathPrefix}/f1f93.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame199: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame200: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/d6e8f.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame201: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/d6e8f.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame202: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/d6e8f.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame203: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/d6e8f.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame204: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/ada9f.png`,
+    `${assetPathPrefix}/b6be3.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame205: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/2eb14.png`,
+    `${assetPathPrefix}/b6be3.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame206: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/2eb14.png`,
+    `${assetPathPrefix}/b6be3.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame207: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/32cde.png`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame208: [
+    `${assetPathPrefix}/00b3b.svg`,
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/62426.png`,
+    `${assetPathPrefix}/f7597.svg`,
+    `${assetPathPrefix}/ui/menu.png`,
+    `${assetPathPrefix}/ui/nav-arrow.png`,
+  ],
+  Frame209: [
+    `${assetPathPrefix}/0ea1b.png`,
+    `${assetPathPrefix}/2a867.svg`,
+    `${assetPathPrefix}/82b38.svg`,
+    `${assetPathPrefix}/f57d8.svg`,
     `${assetPathPrefix}/ui/menu.png`,
     `${assetPathPrefix}/ui/nav-arrow.png`,
   ],

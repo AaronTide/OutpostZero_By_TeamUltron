@@ -552,9 +552,76 @@ const FLOW_GRAPH: Record<string, FlowEdge> = {
   },
   Frame167: {
     prev: "Frame166",
-    next: "Frame72",
+    next: "Frame199",
     label: "Mission Summary — Solar Radiation",
     chapter: "7. Gateway & Solar Storm",
+  },
+
+  // Chapter 8: The 1972 event, mission results & Houston sign-off
+  Frame199: {
+    prev: "Frame167",
+    next: "Frame200",
+    label: "The 1972 Solar Particle Event",
+    chapter: "8. Mission Debrief",
+  },
+  Frame200: {
+    prev: "Frame199",
+    next: "Frame201",
+    label: "1972 — Historical Date",
+    chapter: "8. Mission Debrief",
+  },
+  Frame201: {
+    prev: "Frame200",
+    next: "Frame202",
+    label: "1972 — The Bullet CME",
+    chapter: "8. Mission Debrief",
+  },
+  Frame202: {
+    prev: "Frame201",
+    next: "Frame203",
+    label: "1972 — Between Apollo 16 & 17",
+    chapter: "8. Mission Debrief",
+  },
+  Frame203: {
+    prev: "Frame202",
+    next: "Frame204",
+    label: "1972 — Space Weather Protection",
+    chapter: "8. Mission Debrief",
+  },
+  Frame204: {
+    prev: "Frame203",
+    next: "Frame209",
+    label: "Houston — Future Challenges",
+    chapter: "8. Mission Debrief",
+  },
+  Frame209: {
+    prev: "Frame204",
+    next: "Frame207",
+    label: "Mission Complete! — Day 30/30",
+    chapter: "8. Mission Debrief",
+  },
+  Frame207: {
+    prev: "Frame209",
+    next: "Frame208",
+    label: "Mission Post Mortem",
+    chapter: "8. Mission Debrief",
+  },
+  Frame208: {
+    prev: "Frame207",
+    next: "Frame205",
+    label: "Your Complete Mission Report",
+    chapter: "8. Mission Debrief",
+  },
+  Frame205: {
+    prev: "Frame208",
+    next: "Frame206",
+    label: "Houston — First Mission Complete",
+    chapter: "8. Mission Debrief",
+  },
+  Frame206: {
+    prev: "Frame205",
+    label: "Houston — Mission Complete, Commander",
+    chapter: "8. Mission Debrief",
   },
 };
 
