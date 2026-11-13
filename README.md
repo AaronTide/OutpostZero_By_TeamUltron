@@ -1,9 +1,15 @@
 # Project Outpost Zero
 
 An interactive lunar mission experience created for the NASA Space Apps Challenge by Team Ultron.
-
+ Full prototype:
+ https://www.figma.com/proto/dBJYhgQddNWDNbk6QVPNkh/Outpost-Zero-By-Team-Ultron?node-id=157-560&p=f&t=wd9siD9VDwIyrHDY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=157%3A560&show-proto-sidebar=1
+ 
 > [!NOTE]
-> **Project description:** Add the final project description here.
+> Outpost Zero is an interactive lunar mission simulator that puts students aged 7–12 in command of a four-person Moon outpost, where every decision has consequences for both the mission and its crew. 
+
+Combining real NASA datasets, interconnected resource-management systems, human-centered crew interactions and historical space-weather disaster scenarios, the game transforms complex space science into an immersive, hands-on learning experience. 
+
+Instead of simply learning how astronauts survive in space, students experience the engineering trade-offs, teamwork, and critical decisions that make human space exploration possible.
 
 ## Screenshots
 
