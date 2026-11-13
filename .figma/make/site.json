@@ -1,0 +1,10 @@
+{
+  "description": "Explore NASA space data and imagery through an intuitive interface designed for space enthusiasts and researchers seeking accessible information about missions, celestial objects, and cosmic discoveries.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

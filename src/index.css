@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Orbitron:Bold";
+  src: url("https://static.figma.com/font/Orbitron_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Orbitron:SemiBold";
+  src: url("https://static.figma.com/font/Orbitron_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Orbitron:Medium";
+  src: url("https://static.figma.com/font/Orbitron_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Orbitron:Regular";
+  src: url("https://static.figma.com/font/Orbitron_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Orienta:Regular";
+  src: url("https://static.figma.com/font/Orienta-Regular_2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Orbit:Regular";
+  src: url("https://static.figma.com/font/Orbit-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Orelega One:Regular";
+  src: url("https://static.figma.com/font/OrelegaOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Orelega_One:Regular";
+  src: url("https://static.figma.com/font/OrelegaOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Noto Sans Math";
+  src: url("https://static.figma.com/font/NotoSansMath-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Noto Sans Symbols2";
+  src: url("https://static.figma.com/font/NotoSansSymbols2-Regular_5") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Noto Sans Symbols";
+  src: url("https://static.figma.com/font/NotoSansSymbols-VF_2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@layer base {
+  :root {
+    color: white;
+    background: #020520;
+    font-family: "Orbitron:Medium", sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: #020520;
+    user-select: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.app-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Deep-space letterbox that blends into the artwork's navy palette */
+  background:
+    radial-gradient(1px 1px at 12% 22%, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 78% 14%, rgba(255, 255, 255, 0.45), transparent 60%),
+    radial-gradient(1.5px 1.5px at 64% 82%, rgba(138, 223, 255, 0.5), transparent 60%),
+    radial-gradient(1px 1px at 28% 74%, rgba(255, 255, 255, 0.4), transparent 60%),
+    radial-gradient(1px 1px at 90% 58%, rgba(255, 255, 255, 0.35), transparent 60%),
+    radial-gradient(ellipse at 50% 50%, #0a1650 0%, #050b33 45%, #020520 100%);
+}
+
+.figma-stage-shell {
+  position: relative;
+  flex-shrink: 0;
+  transform-origin: center center;
+  overflow: hidden;
+  background: #03082f;
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgba(5, 219, 255, 0.12),
+    0 0 48px rgba(5, 120, 255, 0.18),
+    0 20px 60px rgba(0, 0, 0, 0.7);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Screen layers: the new screen fades in over the previous one */
+.frame-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.frame-leaving {
+  pointer-events: none;
+}
+
+.frame-enter {
+  animation: frame-in 260ms cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+@keyframes frame-in {
+  from {
+    opacity: 0;
+    transform: scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Navigation & interactive controls sit above character layers */
+[data-name="Backward_BTN 1"],
+[data-name="Menu_BTN 1"],
+[data-name="Start_BTN 2"] {
+  z-index: 30;
+  cursor: pointer;
+}
+
+div:has(> div > [data-name="Backward_BTN 2"]) {
+  z-index: 30;
+  cursor: pointer;
+}
+
+/* Shared tactile feedback for image buttons */
+[data-name="Backward_BTN 1"],
+[data-name="Menu_BTN 1"],
+[data-name="Backward_BTN 2"],
+[data-name="Start_BTN 2"],
+[data-node-id="1:2070"],
+[data-node-id="1:2073"] {
+  cursor: pointer;
+  transition:
+    filter 180ms ease,
+    transform 180ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+[data-name="Backward_BTN 1"]:hover,
+[data-name="Menu_BTN 1"]:hover,
+[data-name="Backward_BTN 2"]:hover {
+  filter: drop-shadow(0 0 6px rgba(5, 219, 255, 0.7));
+  transform: scale(1.07);
+}
+
+[data-name="Start_BTN 2"]:hover,
+[data-node-id="1:2070"]:hover,
+[data-node-id="1:2073"]:hover {
+  filter: brightness(1.12);
+  transform: scale(1.04);
+}
+
+[data-name="Backward_BTN 1"]:active,
+[data-name="Menu_BTN 1"]:active,
+[data-name="Backward_BTN 2"]:active,
+[data-name="Start_BTN 2"]:active,
+[data-node-id="1:2070"]:active,
+[data-node-id="1:2073"]:active {
+  transform: scale(0.94);
+  transition-duration: 80ms;
+}
+
+[data-node-id="1:2070"],
+[data-node-id="1:2073"] {
+  z-index: 25;
+}
+
+/* Crew carousel left/right arrows */
+.crew-screen [data-name="Object"] {
+  cursor: pointer;
+  z-index: 25;
+  transition: filter 180ms ease;
+}
+
+.crew-screen [data-name="Object"]:hover {
+  filter: drop-shadow(0 0 6px rgba(5, 219, 255, 0.9)) brightness(1.15);
+}
+
+/* Decision screen options */
+.decision-screen [data-name="Boss_Name_Table 1"],
+.decision-screen [data-name="Boss_Name_Table 2"],
+.decision-screen [data-name="Boss_Name_Table 3"],
+[data-node-id="1:2336"],
+[data-node-id="1:2337"],
+[data-node-id="1:2339"],
+[data-node-id="1:2341"],
+[data-node-id="1:6221"],
+[data-node-id="1:6223"],
+[data-node-id="1:2968"],
+[data-node-id="1:2970"],
+[data-node-id="1:3128"],
+[data-node-id="1:3132"],
+[data-name="Boss_Name_Table 5"] {
+  cursor: pointer;
+  transition: filter 180ms ease;
+}
+
+.decision-screen [data-name="Boss_Name_Table 1"]:hover,
+.decision-screen [data-name="Boss_Name_Table 2"]:hover,
+.decision-screen [data-name="Boss_Name_Table 3"]:hover,
+[data-name="Boss_Name_Table 5"]:hover {
+  filter: brightness(1.15);
+}
+
+/* Mission menu overlay, styled after the glossy blue button surfaces in the design */
+.mission-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(2, 5, 32, 0.78);
+  backdrop-filter: blur(6px);
+  animation: overlay-in 200ms ease-out both;
+}
+
+.mission-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  max-height: 88dvh;
+  padding: 24px;
+  color: white;
+  border-radius: 14px;
+  border: 1.5px solid rgba(5, 219, 255, 0.85);
+  background: linear-gradient(180deg, #042e8f 0%, #011252 42%, #020736 100%);
+  box-shadow:
+    inset 1px 1px 3px rgba(20, 163, 255, 0.55),
+    inset -1px -2px 3px rgba(0, 4, 30, 0.8),
+    0 0 28px rgba(5, 140, 255, 0.35);
+  animation: panel-in 240ms cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+.mission-icon-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.mission-icon-btn:hover {
+  border-color: #05dbff;
+  background: rgba(5, 219, 255, 0.18);
+}
+
+.mission-btn {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: "Orbitron:Bold", sans-serif;
+  font-size: 12px;
+  color: white;
+  border: 1px solid #05dbff;
+  background: linear-gradient(180deg, #0a3aa8 0%, #061f6e 100%);
+  box-shadow: inset 0 1px 0 rgba(191, 255, 255, 0.25);
+  transition:
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.mission-btn:hover {
+  filter: brightness(1.18);
+}
+
+.mission-btn:active {
+  transform: scale(0.97);
+}
+
+.mission-btn--danger {
+  border-color: #fb227b;
+  background: linear-gradient(180deg, rgba(251, 34, 123, 0.45) 0%, rgba(251, 34, 123, 0.2) 100%);
+}
+
+.mission-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(5, 219, 255, 0.4) transparent;
+}
+
+.mission-btn:focus-visible,
+.mission-icon-btn:focus-visible,
+.mission-scroll button:focus-visible {
+  outline: 2px solid #05dbff;
+  outline-offset: 2px;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame-enter,
+  .mission-overlay,
+  .mission-panel {
+    animation: none;
+  }
+
+  [data-name],
+  [data-node-id] {
+    transition: none !important;
+  }
+}
